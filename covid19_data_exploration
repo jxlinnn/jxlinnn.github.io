@@ -1,0 +1,66 @@
+-- Date range of data
+SELECT min("date"::DATE), max("date"::DATE)
+FROM project2.coviddeaths;
+
+-- Highest Infection Rate in respect to Population
+SELECT "location", population, max(total_cases) max_infected_count, max(total_cases)::float/population AS max_infection_rate,
+FROM project2.coviddeaths 
+WHERE continent IS NOT NULL AND total_cases IS NOT NULL
+GROUP BY "location", population 
+ORDER BY max_infection_rate DESC;
+
+-- Highest death count by continent
+SELECT continent, max(total_deaths) AS max_death_count
+FROM project2.coviddeaths
+WHERE continent IS NOT NULL
+GROUP BY continent
+ORDER BY max_death_count DESC;
+
+ -- Highest covid death count by country
+-- Continent is a null value when location contains an continent name
+SELECT "location", max(total_cases) AS total_cases,  
+	max(total_deaths) max_death_count
+FROM project2.coviddeaths
+WHERE total_cases IS NOT NULL
+AND total_deaths IS NOT NULL 
+AND continent IS NOT NULL 
+GROUP BY "location"
+HAVING max(total_cases) >= max(total_deaths)
+ORDER BY max_death_count DESC;
+
+-- Latest covid death rate by country
+SELECT "location", population, SUM(new_cases) AS tot_cases, SUM(new_deaths) AS tot_deaths, SUM(new_deaths)/SUM(new_cases)::float AS death_rate
+FROM project2.coviddeaths
+WHERE continent IS NOT NULL
+AND total_cases IS NOT NULL
+AND new_deaths IS NOT NULL
+GROUP BY "location", population 
+HAVING max(total_cases) > max(total_deaths)
+ORDER BY death_rate DESC;
+
+-- Proportion of country population who have received at least one vaccine dose
+SELECT max(cd."date"::DATE) AS latest_date, cd."location", cd.population, max(cv.people_vaccinated) AS vacc_count, max(cv.people_vaccinated)/cd.population::float AS pop_vacc_rate
+FROM project2.coviddeaths cd
+JOIN project2.covidvaccinations cv
+	ON cd."date" = cv."date"
+	AND cd."location" = cv."location"
+WHERE cv.people_vaccinated IS NOT NULL AND cd.continent IS NOT NULL AND cd.population IS NOT NULL 
+GROUP BY cd."location", cd.population
+HAVING max(cd.population) >= max(cv.people_vaccinated) 
+ORDER BY pop_vacc_rate DESC;
+
+
+-- Proportion of population who have received at least one dose of vaccine
+WITH popvac AS (
+	SELECT cd."location", cd.population,
+	max(cv.people_vaccinated) OVER (PARTITION BY cd."location", cd.population) AS vacc_count
+FROM project2.coviddeaths cd
+JOIN project2.covidvaccinations cv
+	ON cd."date" = cv."date"
+	AND cd."location" = cv."location"
+WHERE cd.continent IS NOT NULL AND cv.people_vaccinated IS NOT NULL
+)
+SELECT "location", max(vacc_count) AS latest_vacc_ct, MAX(vacc_count)::float/population AS vaccination_rate
+FROM popvac
+GROUP BY "location", population
+ORDER BY latest_vacc_ct DESC;
