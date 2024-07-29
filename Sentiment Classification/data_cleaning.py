@@ -25,3 +25,4 @@ def convert_to_csv(data: List, columns: List, csv_name: String):
   df = pd.DataFrame(data, columns=columns)
   pa_df = pa.Table.from_pandas(df)
   csv.write_csv(pa_df, csv_name)
+  return df
