@@ -14,7 +14,7 @@ class TextPreprocessor(TransformerMixin, BaseEstimator):
         nlp = spacy.load(self.model)
         X = self.preprocess_text(data)
         docs = [nlp(doc) for doc in X]
-        return [self._lemmatize(doc) for doc in docs]
+        return [list(self._lemmatize(doc)) for doc in docs]
 
     def preprocess_text(self, data):
         corpus = []
