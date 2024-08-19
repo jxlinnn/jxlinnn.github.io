@@ -22,6 +22,17 @@ def find_best_estimator(potential_models: List, x_sample, y_sample) -> Dict:
       accuracy = accuracy_score(sample_y_test, y_pred)
       results[model_name] = accuracy
   return results
+
+def model_hyperparameters(param_graid: Dict, model, X_train, y_train):
+  rcv = Pipeline(steps=[
+        ('preprocessor', TextPreprocessor()),
+        ('features', TfidfVectorizer(lowercase=False, sublinear_tf=True)),
+        ('classifier', model)
+])
+  random_search = RandomizedSearchCV(rcv, param_grid, verbose=3, random_state=0)
+  random_search.fit(X_train, y_train)
+  return random_search
+  
     
       
       
