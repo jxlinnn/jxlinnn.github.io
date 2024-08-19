@@ -24,7 +24,7 @@ def find_best_estimator(potential_models: List, x_sample, y_sample) -> Dict:
       results[model_name] = accuracy
   return results
 
-def model_hyperparameters(param_graid: Dict, model, X_train, y_train):
+def model_hyperparameters(param_graid: Dict, model, x_sample, y_sample):
   rcv = Pipeline(steps=[
         ('preprocessor', TextPreprocessor()),
         ('features', TfidfVectorizer(lowercase=False, sublinear_tf=True)),
