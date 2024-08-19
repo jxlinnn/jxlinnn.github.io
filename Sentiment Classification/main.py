@@ -2,9 +2,9 @@ import csv
 import pandas as pd
 import numpy as np
 import re
-from data_cleaning import *
-from model_selection import *
-from TextPreprocessor import *
+from data_cleaning.py import *
+from model_selection.py import *
+from TextPreprocessor.py import TextPreprocessor
 from sklearn.pipeline import Pipeline
 from sklearn.linear_model import SGDClassifier
 from sklearn.feature_extraction.text import TfidfVectorizer
