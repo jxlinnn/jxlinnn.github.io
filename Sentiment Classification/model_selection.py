@@ -34,6 +34,11 @@ def model_hyperparameters(param_graid: Dict, model, x_sample, y_sample):
   random_search.fit(X_train, y_train)
   return random_search
 
+def plot_predictions(predictions, model_name):
+  fig, ax = plt.subplots(figsize=(10, 5))
+  ConfusionMatrixDisplay.from_predictions([val[0] for val in y_test], y_pred, ax=ax)
+  ax.set_title(f'Confusion Matrix for {model_name}')
+
 def save_trained_model(trained_model, model_name):
   joblib.dump(model, f'model_name.joblib')
   
