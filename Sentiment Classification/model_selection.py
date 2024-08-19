@@ -6,7 +6,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score, roc_curve
 import joblib
-import TextPreprocessor
+from TextPreprocessor.py import TextPreprocessor
 
 
 def find_best_estimator(potential_models: List, x_sample, y_sample) -> Dict:
