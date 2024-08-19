@@ -32,9 +32,9 @@ most_active_users = user_review_count[user_review_count>50]
 #find and select most popular/frequently visited restaurants based on review counts > 100
 restaruant_review_count = df.groupby('business_id')['stars'].count().sort_values(ascending=False)
 popular_restaurants = restaruant_review_count[restaruant_review_count>100]
-
 restaurant_list = list(popular_restaurants.index)
 user_list = list(most_active_users.index)
+
 #generate dataframe for fitting
 train_df = df[df['business_id'].isin(restaurant_list[:100]) & df['user_id'].isin(user_list[:30])]
 df_pivot = train_df.pivot_table(index="business_id", columns="user_id", values="stars", aggfunc='first', fill_value=0)
