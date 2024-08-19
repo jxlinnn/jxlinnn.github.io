@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 from sklearn.decomposition import TruncatedSVD
 
-class SVD_Recommendation():
+class SVD_Recommender():
     def __init__(self, product_df):
         self.product_df = product_df
     
