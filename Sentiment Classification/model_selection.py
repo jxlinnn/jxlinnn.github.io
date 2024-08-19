@@ -5,6 +5,7 @@ from sklearn.svm import LinearSVC
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score, roc_curve
+import joblib
 import TextPreprocessor
 
 
@@ -32,6 +33,9 @@ def model_hyperparameters(param_graid: Dict, model, X_train, y_train):
   random_search = RandomizedSearchCV(rcv, param_grid, verbose=3, random_state=0)
   random_search.fit(X_train, y_train)
   return random_search
+
+def save_trained_model(trained_model, model_name):
+  joblib.dump(model, f'model_name.joblib')
   
     
       
