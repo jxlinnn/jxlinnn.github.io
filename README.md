@@ -11,7 +11,7 @@ Hello, welcome to my portfolio! My name is Jenny Lin and recently graduated with
 * Finetuned hyperparameters using Randomized Search and achieving a test accuracy of 83.79%.
 
 ## [Yelp Restauarants Recommendation](https://github.com/jxlinnn/jxlinnn.github.io/tree/3b7bbb0ada183835dcc6842fa6ca23131809b005/Yelp%20Restaurant%20Recommendation)
-  * Generated a data on most active users and popular restaurants based on review counts for training and testing.
+  * Generated data on most active users and popular restaurants based on review counts using aggregate functions with groupby and pivot.
   * Implemented the Singular Value Decomposition transformer to predict restaurant preference based on past user ratings.
 
 ## [Walmart Sales Analysis](https://github.com/jxlinnn/jxlinnn.github.io/tree/3e21906c027e1fee7ffe6c8c1e4bb8a9552a1996/Walmart%20Sales)
