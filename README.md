@@ -6,8 +6,7 @@
 * Generated training and testing data for custom neural network using Dataloader from Pytorch library. 
 * Designed and trained a Regression model resulting final accuracy of 7% using training and augmented data. 
 
-## [Sentiment Classification on Yelp User Reviews]
-(https://github.com/jxlinnn/jxlinnn.github.io/tree/3e21906c027e1fee7ffe6c8c1e4bb8a9552a1996/Sentiment%20Classification)
+## [Sentiment Classification on Yelp User Reviews](https://github.com/jxlinnn/jxlinnn.github.io/tree/3e21906c027e1fee7ffe6c8c1e4bb8a9552a1996/Sentiment%20Classification)
 * Cleaned yelp user and business datasets and filtering for restaurants only reviews and verifying for 
 * Employed pipeline using custom text transformer and TF-IDF for determining best estimator.
 * Finetuned hyperparameters using Randomized Search and achieving a test accuracy of 83.79%.
