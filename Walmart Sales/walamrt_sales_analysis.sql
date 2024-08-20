@@ -3,7 +3,7 @@ DROP TABLE IF EXISTS yelp.walmart_sales;
 CREATE TABLE IF NOT EXISTS yelp.walmart_sales
 (
     store integer,
-    sales_date character varying COLLATE pg_catalog."default",
+    sales_date character varying,
     weekly_sales real,
     holiday_flag integer,
     temperature real,
