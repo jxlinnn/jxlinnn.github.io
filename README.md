@@ -1,6 +1,6 @@
 ![image](https://github.com/user-attachments/assets/0792569f-8b42-40c3-a0b0-95e633e0b152)Hello, welcome to my portfolio! My name is Jenny Lin and currently a senior double majoring in Applied Mathematics and Economics. In this portfolio, I have included personal projects using programming languages Python and SQL. In addition, I use Tableau and Matplotlib for presenting data trends and insights in a more appealing and conspicuous way. Through the projects, I aim to showecase my ability in conducting data analysis and application of data science techniques. 
 
-## [Autonomous Vehicle Trajectory Prediction](https://github.com/jxlinnn/jxlinnn.github.io/tree/3e21906c027e1fee7ffe6c8c1e4bb8a9552a1996/Autonomous%20Vehicle%20Trajectory%20Prediction))
+## [Autonomous Vehicle Trajectory Prediction](https://github.com/jxlinnn/jxlinnn.github.io/tree/3e21906c027e1fee7ffe6c8c1e4bb8a9552a1996/Autonomous%20Vehicle%20Trajectory%20Prediction)
 ](https://github.com/jxlinnn/jxlinnn.github.io/blob/main/salesProject.ipynb)
 * Preprocessed PIL images and extracted target values from CSV file for preparing custom dataset.
 * Generated training and testing data for custom neural network using Dataloader from Pytorch library. 
