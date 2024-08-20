@@ -13,5 +13,5 @@
 
 ## [Walmart Sales Analysis](https://github.com/jxlinnn/jxlinnn.github.io/tree/3e21906c027e1fee7ffe6c8c1e4bb8a9552a1996/Walmart%20Sales)
 * Measured effects of holiday, cpi, and unemployment on consumer behavior using joins, multiple CTEs, window functions.
-* Comapred annual sales from 2010 to 2012 by percentage change and evaluated sales trend based on monthly sales. 
+* Compared annual sales by percentage change and evaluated sales trend based on monthly sales. 
 
