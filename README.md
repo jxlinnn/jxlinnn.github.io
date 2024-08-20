@@ -1,16 +1,18 @@
-Hello, welcome to my portfolio! My name is Jenny Lin and currently a senior double majoring in Applied Mathematics and Economics. In this portfolio, I have included personal projects using programming languages Python and SQL. In addition, I use Tableau and Matplotlib for presenting data trends and insights in a more appealing and conspicuous way. Through the projects, I aim to showecase my ability in conducting data analysis and application of data science techniques. 
+![image](https://github.com/user-attachments/assets/0792569f-8b42-40c3-a0b0-95e633e0b152)Hello, welcome to my portfolio! My name is Jenny Lin and currently a senior double majoring in Applied Mathematics and Economics. In this portfolio, I have included personal projects using programming languages Python and SQL. In addition, I use Tableau and Matplotlib for presenting data trends and insights in a more appealing and conspicuous way. Through the projects, I aim to showecase my ability in conducting data analysis and application of data science techniques. 
 
-## [Analyzing Sales of Chip Brands](https://github.com/jxlinnn/jxlinnn.github.io/blob/main/salesProject.ipynb)
-* Cleaned and wrangled transaction data, i.e, removed outliers, filtered out irrelevant products, and generalized brand names for consistency.
-* Merged transaction and customer data for analyzing purchasing behavior and preferences.
-* Visualized transactions bsed on customer demographics and customer type using Matplotlib.
+## [Autonomous Vehicle Trajectory Prediction](https://github.com/jxlinnn/jxlinnn.github.io/tree/3e21906c027e1fee7ffe6c8c1e4bb8a9552a1996/Autonomous%20Vehicle%20Trajectory%20Prediction))
+](https://github.com/jxlinnn/jxlinnn.github.io/blob/main/salesProject.ipynb)
+* Preprocessed PIL images and extracted target values from CSV file for preparing custom dataset.
+* Generated training and testing data for custom neural network using Dataloader from Pytorch library. 
+* Designed and trained a Regression model resulting final accuracy of 7% using training and augmented data. 
 
-## [Media Campaign Cost Prediction](https://github.com/jxlinnn/jxlinnn.github.io/blob/main/ML.ipynb)
-* Analyzed training data using confusion matrix and preprocessed the data such as dropping low correlated columns and creating new features based on existing data.
-* Trained and employed Gradient Boosting Regressor model using Scikit-Learn for predicting the target cost of media campaign.
-* Minimized Root Mean Squared Log Error through KFold algorithm and feature engineering, achieving final score of 29.83%.
+## [Sentiment Classification on Yelp User Reviews]
+(https://github.com/jxlinnn/jxlinnn.github.io/tree/3e21906c027e1fee7ffe6c8c1e4bb8a9552a1996/Sentiment%20Classification)
+* Cleaned yelp user and business datasets and filtering for restaurants only reviews and verifying for 
+* Employed pipeline using custom text transformer and TF-IDF for determining best estimator.
+* Finetuned hyperparameters using Randomized Search and achieving a test accuracy of 83.79%.
 
-## [Understanding Global COVID-19 Data](https://github.com/jxlinnn/jxlinnn.github.io/blob/main/ML.ipynb)
-* Filtered data to discover countries with leading infection rate, death rates, and other statistics using PostgreSQL.
-* Mapped out countries to their corresponding vaccination rate using temporary table and joins. 
+## [Walmart Sales Analysis](https://github.com/jxlinnn/jxlinnn.github.io/tree/3e21906c027e1fee7ffe6c8c1e4bb8a9552a1996/Walmart%20Sales)
+* Measured effects of holiday, cpi, and unemployment on consumer behavior using joins, multiple CTEs, window functions.
+* Comapred annual sales from 2010 to 2012 by percentage change and evaluated sales trend based on monthly sales. 
 
