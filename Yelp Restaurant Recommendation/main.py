@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 import re
-import SVD_Recommender
+from SVD_Recommender.py import SVD_Recommender
 
 df1 = pd.read_csv("yelp_review.csv")
 df2 = pd.read_csv("yelp_business.csv")
