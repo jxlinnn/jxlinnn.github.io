@@ -1,4 +1,4 @@
-Hello, welcome to my portfolio! My name is Jenny Lin and graduated in the Spring with a Bachelor of Science in Applied Mathematics and Economics. In this portfolio, I have included projects using programming languages Python and SQL. Through the projects, I aim to showecase my ability in conducting data analysis and application of data science techniques. 
+Hello, welcome to my portfolio! My name is Jenny Lin and recently graduated with a Bachelor of Science in Applied Mathematics and Economics. In this portfolio, I have included projects using programming languages Python and SQL. Through the projects, I aim to showecase my ability in conducting data analysis and application of data science techniques. 
 
 ## [Autonomous Vehicle Trajectory Prediction](https://github.com/jxlinnn/jxlinnn.github.io/tree/3e21906c027e1fee7ffe6c8c1e4bb8a9552a1996/Autonomous%20Vehicle%20Trajectory%20Prediction)
 * Preprocessed PIL images and extracted target values from CSV file for preparing custom dataset.
