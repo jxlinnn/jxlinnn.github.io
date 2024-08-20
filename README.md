@@ -10,7 +10,7 @@ Hello, welcome to my portfolio! My name is Jenny Lin and recently graduated with
 * Employed pipeline using custom text transformer and TF-IDF for determining best estimator.
 * Finetuned hyperparameters using Randomized Search and achieving a test accuracy of 83.79%.
 
-[Yelp Restauarants Recommendation](https://github.com/jxlinnn/jxlinnn.github.io/tree/3b7bbb0ada183835dcc6842fa6ca23131809b005/Yelp%20Restaurant%20Recommendation)
+## [Yelp Restauarants Recommendation](https://github.com/jxlinnn/jxlinnn.github.io/tree/3b7bbb0ada183835dcc6842fa6ca23131809b005/Yelp%20Restaurant%20Recommendation)
   * Generated a data on most active users and popular restaurants based on review counts for training and testing.
   * Implemented the Singular Value Decomposition transformer to predict restaurant preference based on past user ratings.
 
