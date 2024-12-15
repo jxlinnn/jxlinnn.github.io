@@ -8,6 +8,7 @@ import pandas as pd
 import numpy as np
 from PIL import Image
 
+# create dictionary that matches image data with corresponding label
 def load_img_targets(csv_path: str, img_paths: List) -> Dict[str, Any]:
   image_targets = {}
   df_target = pd.read_csv(csv_path).set_index('image_id')
@@ -17,7 +18,7 @@ def load_img_targets(csv_path: str, img_paths: List) -> Dict[str, Any]:
     image_targets[path] = df_target.loc[img_id].to_list()
   return image_targets
 
-  
+# set up data as input for model
 class CustomImageDataset(torch.utils.data.Dataset):
   def __init__(self, img_paths: List, img_targets: Dict[str, Any]=None):
     self.img_paths = img_paths
@@ -31,7 +32,6 @@ class CustomImageDataset(torch.utils.data.Dataset):
     return len(self.img_paths)
 
   def __getitem__(self, idx):
-    # img_path = os.path.join(self.img_dir, str(self.img_labels.iloc[idx]) + '.png')
     img_path = self.img_paths[idx]
     image =  Image.open(img_path)
     image = self.transform(image)
@@ -41,8 +41,9 @@ class CustomImageDataset(torch.utils.data.Dataset):
         outputs = torch.tensor(self.img_targets[img_path])
         return image, label, outputs
     return image, label
-    
-class TranformedDataset(torch.utils.data.Dataset):
+  
+# data augmentation by incorporating transformations
+class TransformedDataset(torch.utils.data.Dataset):
   def __init__(self, img_paths: List, img_targets: Dict[str, Any]=None):
     self.img_paths = img_paths
     self.transform = v2.Compose([
@@ -58,7 +59,6 @@ class TranformedDataset(torch.utils.data.Dataset):
     return len(self.img_paths)
 
   def __getitem__(self, idx):
-    # img_path = os.path.join(self.img_dir, str(self.img_labels.iloc[idx]) + '.png')
     img_path = self.img_paths[idx]
     image =  Image.open(img_path)
     image = self.transform(image)
@@ -68,8 +68,5 @@ class TranformedDataset(torch.utils.data.Dataset):
         outputs = torch.tensor(self.img_targets[img_path])
         return image, label, outputs
     return image, label
-
-
-
 
 
