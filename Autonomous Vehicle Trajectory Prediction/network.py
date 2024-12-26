@@ -6,6 +6,9 @@ import dataloading as dl
 
 
 class CNNRegressionModel(nn.Module):
+  """
+  This initializes a Regression model with CNN architecture which takes image data as input and returns a numerical predictions.
+  """
   def __init__(self, image_size):
     super(CNNRegressionModel, self).__init__()
     self.counter = 0
@@ -52,9 +55,9 @@ class CNNRegressionModel(nn.Module):
     x = self.output(x)
     return x   
 
-def train_network(device, train_dataloader,  n_epochs: int = 3, image_size: Tuple[int, int, int] = (3, 100, 100)):
+def train_model(device, train_dataloader,  n_epochs: int = 3, image_size: Tuple[int, int, int] = (3, 100, 100)):
   """
-  This trains the network for a set number of epochs.
+  This trains the model for a set number of epochs.
   """
   # Define the model, loss function, and optimizer
   model = CNNRegressionModel(image_size=image_size)
@@ -63,7 +66,7 @@ def train_network(device, train_dataloader,  n_epochs: int = 3, image_size: Tupl
   criterion = nn.MSELoss()
   optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
 
-  # Train the model
+  # Model training
   writer = SummaryWriter()
   for epoch in range(n_epochs):
       for i, (inputs, label, targets) in enumerate(train_dataloader):
