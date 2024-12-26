@@ -18,7 +18,7 @@ def load_img_targets(csv_path: str, img_paths: List) -> Dict[str, Any]:
     image_targets[path] = df_target.loc[img_id].to_list()
   return image_targets
 
-# set up data as input for model
+# create train and test data
 class CustomImageDataset(torch.utils.data.Dataset):
   def __init__(self, img_paths: List, img_targets: Dict[str, Any]=None):
     self.img_paths = img_paths
