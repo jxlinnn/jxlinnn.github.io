@@ -8,6 +8,21 @@ import pandas as pd
 import numpy as np
 from PIL import Image
 
+# checks files in directory and returns empty and non-empty image file paths
+def load_img_paths(dir):
+    empty = []
+    img_paths = []
+    for fname in os.listdir(dir):
+        pth = os.path.join(dir, fname)
+        try:
+            img = Image.open(pth)
+            img_paths.append(pth)
+        except:
+            print(pth)
+            empty.append(pth)
+            continue
+    return img_paths, empty
+
 # create dictionary that matches image data with corresponding label
 def load_img_targets(csv_path: str, img_paths: List) -> Dict[str, Any]:
   image_targets = {}
